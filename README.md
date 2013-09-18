@@ -43,6 +43,7 @@ On your patchrom directory type:
     'make fullota PORT_PODUCT=i8150 BUILD_NUMBER=(your version) ex=3.9.13'
     
 Make OTA
+---------
 
     find out target_files.zip in out directory
     copy that to your device folder
