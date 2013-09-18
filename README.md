@@ -35,23 +35,35 @@ Build
 
 On your patchrom directory type:
 
-    'source build/envsetup.sh'    
+    'source build/envsetup.sh'
+    
     'mkdir ancora'
+    
     'cd ancora'
+    
     'git init'
+    
     'git pull git@github.com:YogiBlacksmith/patchrom_ancora.git master'
+    
     add CM10 rom and rename it to 'stockrom.zip' and place it into your device directory!!
+    
     'make fullota PORT_PODUCT=i8150 BUILD_NUMBER=(your version) ex=3.9.13'
     
 Make OTA
 ---------
 
     find out target_files.zip in out directory
+    
     copy that to your device folder
+    
     rename to last_target_files.zip
+    
     make change to your patchrom
+    
     type 'make clean'
+    
     type 'make fullota' again to generate new target_files.zip
+    
     then type './makeota 3.9.20 3.9.13 RN'
     
 ENJOY
