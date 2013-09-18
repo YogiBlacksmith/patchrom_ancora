@@ -53,3 +53,5 @@ Make OTA
     type 'make fullota' again to generate new target_files.zip
     then type './makeota 3.9.20 3.9.13 RN'
     
+ENJOY
+    
