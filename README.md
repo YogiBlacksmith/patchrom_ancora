@@ -33,49 +33,22 @@ Then to sync up:
 Build
 --------
 
-Assumed current directory is patchtom and you want to build the ROM for Huawei Honor
+On your patchrom directory type:
 
+    source build/envsetup.sh    
+    mkdir ancora
+    cd ancora
+    git clone git@github.com:YogiBlacksmith/patchrom_ancora.git
+    add CM10 rom and rename it to stockrom.zip
+    make fullota PORT_PODUCT=i8150 BUILD_NUMBER=(your version) ex=3.9.13
+    
+Make OTA
 
-     . build/envsetup.sh
-     cd honor
-     make fullota
-
-After build completed, there will be a fullota.zip under out directory, now you can flash this file into your device.
-
-
-Porting new device
-------------------
-
-Asssumed current directory is patchrom and you want to port miui to a new android device xblade
-
-Prerequiste:
-(1) Your device has root privilege or a rooted kernel(preferred)
-
-(2) Your device can flash ZIP from recovery(ext4 or CWM recovery is preferred)
-
-Workflow:
-
-(1) connect your device to PC, ensure adb works
-
-(2) run the following commands
-
-     . build/envsetup.sh
-
-     mkdir xblade
-
-     cd xblade
-      
-     adb reboot recovery
-
-     ../tools/releasetools/ota_target_from_phone -r (this will generate a stockrom.zip, flash this zip in recovery mode to ensure it works)
-
-     cp ../honor/makefile .(modify the local-zip-file to stockrom.zip, read the comments in makefile)
-
-     make workspace
-
-     make firstpatch (this will add the miui code into framework/android.policy/services.jar, resolve any conflict)
-
-     make fullota
-
-Now you can get your own miui ROM, enjoy it!
-
+    find out target_files.zip in out directory
+    copy that to your device folder
+    rename to last_target_files.zip
+    make change to your patchrom
+    type 'make clean'
+    type 'make fullota' again to generate new target_files.zip
+    then type './makeota 3.9.20 3.9.13 RN'
+    
