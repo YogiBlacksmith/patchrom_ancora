@@ -24,7 +24,7 @@ local-miui-modified-apps := MiuiHome MiuiSystemUI Settings Phone Mms ThemeManage
 # All apps need to be removed from original ZIP file
 local-remove-apps   := Apollo AudioEffectSettings CMFileManager CMFileManagerThemes \
 CompassCalibrate CMWallpapers DefyParts Development DSPManager \
-HTMLViewer LatinIME LiveWallpapers LiveWallpapersPicker InputDevices PicoTts \
+HTMLViewer LiveWallpapers LiveWallpapersPicker InputDevices PicoTts \
 SpareParts Superuser SystemUI Term ThemeChooser Torch \
 Trebuchet VoiceDialer CMUpdater \
 
